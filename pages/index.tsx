@@ -3,6 +3,7 @@ import { Inter } from '@next/font/google'
 import client from '../apolloClient'
 import { gql } from '@apollo/client'
 import Link from 'next/link'
+import {Container} from '../styles/Container.js'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,12 +18,14 @@ export default function Home({linetteBlogs}: {linetteBlogs: any}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div>
-          <h1>Linettes Blog</h1>
-            <ul>
-              {linetteBlogs.map( (blog: any, i: any) => <li key={i}><Link href={`/blogs/${blog.slug}`}>{blog.title}</Link></li>)}
-            </ul>
-        </div>
+        <Container>
+          <div>
+            <h1>Linettes Blog</h1>
+              <ul>
+                {linetteBlogs.map( (blog: any, i: any) => <li key={i}><Link href={`/blogs/${blog.slug}`}>{blog.title}</Link></li>)}
+              </ul>
+          </div>
+        </Container>
       </main>
     </>
   )
