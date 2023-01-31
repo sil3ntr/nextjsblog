@@ -1,19 +1,19 @@
 import { gql } from '@apollo/client';
 import React from 'react';
 import client from '../../apolloClient';
-import {Container} from '../../styles/Container.js';
+import {ContainerStyle} from '../../styles/ContainerStyled';
 
 
 export default function BlogPage({linetteBlog}) {
     return (
-      <Container>
+      <ContainerStyle>
         <div>
           <h1>{linetteBlog.title}</h1>
           <h3>{linetteBlog.author}</h3>
           <h4>{linetteBlog.publishDate}</h4>
           <div dangerouslySetInnerHTML={{__html:linetteBlog.blogText.html}}></div>
         </div>
-      </Container>
+      </ContainerStyle>
     )
 }
 
