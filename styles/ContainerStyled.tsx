@@ -2,10 +2,13 @@ import styled from "styled-components";
 import { Darktheme, Lighttheme } from "./Theme";
 
 export const ContainerStyle = styled.div `
-    width: 1000px;
-    max-width: 100%;
-    padding: 0 10px;
-    margin: 0 auto;
+    display: flex;
+	flex-flow: row nowrap;
+    width: 100%;
+    align-items: center;
+    flex-basis: auto;
+    justify-content: center;
+
 
     & ul {
         list-style-type: none; 
@@ -16,4 +19,14 @@ export const ContainerStyle = styled.div `
         color: ${Darktheme.colors.font};
     }
 `
+export const ContainerRight = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+`
 
+export const ContainerLeft = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+`

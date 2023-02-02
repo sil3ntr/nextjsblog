@@ -15,8 +15,10 @@ export const StyledHeader = styled.header`
 ` 
 export const NavStyle = styled.nav `
     display: flex;
+	flex-flow: row nowrap;
+    justify-content: center;
     align-items: center;
-    justify-content: end;
+    width: 100%;
     margin-bottom: 40px;
     margin-right: 30px;
 
@@ -25,7 +27,16 @@ export const NavStyle = styled.nav `
         transform: scale(1.10);
     }
 
+    & ul {
+	    align-items: flex-end;
+    }
+
+
 `
-export const Logo = styled.img`
-    width: 80px
+export const Logo = styled.div`
+
+   img {
+        margin-left: 30px;
+        width: 80px;
+   }
 `
