@@ -1,12 +1,14 @@
 import styled from 'styled-components'
 import { Lighttheme, Darktheme } from '../styles/Theme'
+import { poppins } from './Global'
 
 
 export const StyledHeader = styled.header`
     background-color: ${Darktheme.colors.header};
     padding: 40px 0;
-    font-family: 'Poppins' sans-serif;
-    color: ${Darktheme.colors.font};
+    font-family: ${poppins.style.fontFamily}, sans-serif;
+    color: ${Lighttheme.colors.font};
+    max-width: 1200px;
 
     ul {
         list-style-type: none;

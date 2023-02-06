@@ -1,9 +1,14 @@
 import { createGlobalStyle } from 'styled-components';
 import { Lighttheme, Darktheme } from './Theme';
+import { Inconsolata, Poppins } from '@next/font/google';
 
-const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;700&family=Marcellus&family=Poppins:ital,wght@1,500&family=Quicksand&display=optional');
-  
+export const inconsolata = Inconsolata({ subsets: ['latin'],
+                    display: "fallback" })
+
+export const poppins = Poppins({ subsets: ['latin'],
+                    weight: ["400","500"] })
+
+export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
   }
@@ -11,8 +16,8 @@ const GlobalStyle = createGlobalStyle`
   body {
     background: ${Darktheme.colors.body};
     font-size: 1.15em;
-    font-family: 'Poppins', sans-serif;
-    color: ${Darktheme.colors.font};
+    font-family: ${poppins.style.fontFamily}, sans-serif;
+    color: ${Lighttheme.colors.font};
     margin: 0;
   }
 
@@ -26,4 +31,3 @@ const GlobalStyle = createGlobalStyle`
 }
 `
 
-export default GlobalStyle

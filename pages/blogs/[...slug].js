@@ -1,19 +1,27 @@
 import { gql } from '@apollo/client';
 import React from 'react';
 import client from '../../apolloClient';
+import {GlobalStyle} from '../../styles/Global';
 import {ContainerStyle} from '../../styles/ContainerStyled';
+import { ThemeProvider } from 'styled-components';
+import { Lighttheme, DarkTheme } from '../../styles/Theme';
 
 
 export default function BlogPage({linetteBlog}) {
     return (
-      <ContainerStyle>
-        <div>
-          <h1>{linetteBlog.title}</h1>
-          <h3>{linetteBlog.author}</h3>
-          <h4>{linetteBlog.publishDate}</h4>
-          <div dangerouslySetInnerHTML={{__html:linetteBlog.blogText.html}}></div>
-        </div>
-      </ContainerStyle>
+      <>
+        <ThemeProvider theme={Lighttheme}>
+        <GlobalStyle/>
+        <ContainerStyle>
+          <div>
+            <h1>{linetteBlog.title}</h1>
+            <h3>{linetteBlog.author}</h3>
+            <h4>{linetteBlog.publishDate}</h4>
+            <div dangerouslySetInnerHTML={{__html:linetteBlog.blogText.html}}></div>
+          </div>
+        </ContainerStyle>
+        </ThemeProvider>
+      </>
     )
 }
 

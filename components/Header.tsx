@@ -1,5 +1,6 @@
 import { StyledHeader, NavStyle, Logo } from "../styles/Header.Styled"
 import { ContainerStyle, ContainerLeft, ContainerRight } from "../styles/ContainerStyled"
+import Link from "next/link"
 import {Flex, FlexCol} from '../styles/Flex.Styled'
 
 export default function Header () {
@@ -15,10 +16,10 @@ export default function Header () {
                                 </ContainerLeft>
                                 <ContainerRight>
                                     <ul>
-                                        <li>BLOG</li>
+                                        <li><Link href={`/blogs/`}>BLOG</Link></li>
                                     </ul>
                                     <ul>
-                                        <li>CV</li>
+                                    <li><Link href={`/cv/`}>CV</Link></li>
                                     </ul>
                                 </ContainerRight>
                             </NavStyle>

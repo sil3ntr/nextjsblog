@@ -16,7 +16,7 @@ export const ContainerStyle = styled.div `
 
     & a:link, a:visited, a:active {
         text-decoration: none;
-        color: ${Darktheme.colors.font};
+        color: ${Lighttheme.colors.font};
     }
 `
 export const ContainerRight = styled.div`
