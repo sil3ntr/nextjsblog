@@ -12,4 +12,8 @@ export const HighlightStyled = styled.div`
     h1 {
         font-size: 4em;
     }
+
+    img {
+        width: 50%;
+    }
 ` 

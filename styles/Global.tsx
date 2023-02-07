@@ -13,6 +13,10 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  main {
+    display: grid;
+  }
+
   body {
     background: ${Darktheme.colors.body};
     font-size: 1.15em;

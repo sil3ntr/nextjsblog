@@ -1,7 +1,6 @@
 import { StyledHeader, NavStyle, Logo } from "../styles/Header.Styled"
 import { ContainerStyle, ContainerLeft, ContainerRight } from "../styles/ContainerStyled"
-import Link from "next/link"
-import {Flex, FlexCol} from '../styles/Flex.Styled'
+
 
 export default function Header () {
     return (
@@ -11,15 +10,15 @@ export default function Header () {
                             <NavStyle>
                                 <ContainerLeft>
                                     <Logo> 
-                                        <img src='./images/next.svg' alt='Linette Devigan Logo'/> 
+                                        <img src='./images/linettedevigan.png' alt='Linette Devigan Logo'/> 
                                     </Logo>
                                 </ContainerLeft>
                                 <ContainerRight>
                                     <ul>
-                                        <li><Link href={`/blogs/`}>BLOG</Link></li>
+                                        <li>BLOG</li>
                                     </ul>
                                     <ul>
-                                    <li><Link href={`/cv/`}>CV</Link></li>
+                                        <li>CV</li>
                                     </ul>
                                 </ContainerRight>
                             </NavStyle>

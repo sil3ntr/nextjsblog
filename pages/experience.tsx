@@ -2,14 +2,15 @@ import Head from 'next/head'
 import client from '../apolloClient'
 import { gql } from '@apollo/client'
 import Link from 'next/link'
-import {ContainerStyle} from '../styles/ContainerStyled'
 import {GlobalStyle} from '../styles/Global'
 import Header from '../components/Header'
 import { ThemeProvider } from 'styled-components'
 import {Darktheme, Lighttheme} from '../styles/Theme'
+import { Grid } from '../styles/GridStyled'
+import { ExperienceStyled  } from '../styles/Experience.Styled'
 
 
-export default function Experience ({linetteExperiences}: any) {
+export default function Experience ({linetteCvExperiences}: any) {
 
   return (
       <ThemeProvider theme={Lighttheme}>
@@ -23,13 +24,16 @@ export default function Experience ({linetteExperiences}: any) {
               <link rel="icon" href="/favicon.ico" />
             </Head>
             <Header/>
-                <ContainerStyle>
-                  <div>
-                      <ul>
-                        {linetteExperiences.map( (experience: any, i: any) => <li key={i}> {experience.aboutCompany}</li>)}
-                      </ul>
+                <ExperienceStyled>
+                  <div className='experience-grid'>
+                        <ul>
+                          {linetteCvExperiences.map( (experience: any, i: any) => 
+                            <div className='experience' key={i}> 
+                              <h2>{experience.companyName}</h2>
+                            </div>)}
+                        </ul>
                   </div>
-                </ContainerStyle>
+                </ExperienceStyled>
         </>
       </ThemeProvider>
   )
@@ -39,30 +43,29 @@ export async function getStaticProps() {
   const {data} = await client.query({
     query: gql`
         query {
-            linetteCvExperiences {
-              aboutCompany
-              companyName
-              createdAt
-              endDate
-              highlightsAchievements
-              id
-              keyProjects
-              publishedAt
-              roleBlurb
-              roleName
-              roleResponsibilities
-              startDate
-              updatedAt
-            }
+          linetteCvExperiences {
+            aboutCompany
+            companyName
+            createdAt
+            endDate
+            highlightsAchievements
+            id
+            keyProjects
+            publishedAt
+            roleBlurb
+            roleName
+            startDate
+            updatedAt
+          }
         }
     `
   });
 
-  const {linetteExperiences} = data;
+  const {linetteCvExperiences} = data;
 
   return {
     props: {
-        linetteExperiences
+        linetteCvExperiences
     }
   }
 }

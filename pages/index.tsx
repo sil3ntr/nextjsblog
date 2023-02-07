@@ -11,6 +11,7 @@ import { useContext } from 'react'
 import { ThemeContext } from 'styled-components'
 import { Flex, FlexCol } from '../styles/Flex.Styled'
 import { HighlightStyled} from '../styles/Highlight.Style'
+import { Grid } from '../styles/GridStyled'
 
 
 
@@ -35,10 +36,23 @@ export default function Home({linetteBlogs}: any) {
             </Head>
             <Header/>
             <main>
+              <Grid>
+              <HighlightStyled>
+                  <img src='./images/linettedevigan_lrg.png' alt='Linette Devigan Logo'/> 
+                </HighlightStyled>
+                <HighlightStyled>
+                  <p>Some words in here.</p>
+                </HighlightStyled>
+                <HighlightStyled>
+                      <ul>
+                        {linetteBlogs.map( (blog: any, i: any) => <li key={i}><Link href={`/blogs/${blog.slug}`}>{blog.title}</Link></li>)}
+                      </ul>
+                </HighlightStyled>
+              </Grid>
               <Flex>
               <FlexCol>
                 <HighlightStyled>
-                  <h1>LINETTE DEVIGAN</h1>
+                  <img src='./images/linettedevigan_lrg.png' alt='Linette Devigan Logo'/> 
                 </HighlightStyled>
               </FlexCol>
               <FlexCol>
@@ -58,7 +72,7 @@ export default function Home({linetteBlogs}: any) {
                 <FlexCol></FlexCol>
                 <FlexCol>  
                   <HighlightStyled>
-                    <h1>MARKETING STRATEGY</h1>
+                  <img src='./images/strategicmarketing.png' alt='Strategic Marketing'/> 
                   </HighlightStyled>
                 </FlexCol>
               </Flex>
