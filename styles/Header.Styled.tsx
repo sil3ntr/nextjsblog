@@ -8,7 +8,7 @@ export const StyledHeader = styled.header`
     padding: 40px 0;
     font-family: ${poppins.style.fontFamily}, sans-serif;
     color: ${Lighttheme.colors.font};
-    max-width: 1200px;
+    max-width: 100%;
 
     ul {
         list-style-type: none;
@@ -41,4 +41,19 @@ export const Logo = styled.div`
         margin-left: 30px;
         width: 80px;
    }
+`
+export const HeaderStyledBox = styled.div `
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 1298px;
+    height: 62px;
+    left: 72px;
+    top: 10px;
+
+    border-width: 2px 2px 3px 2px;
+    border-style: solid;
+    border-color: #01161E;
+    filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 10px;
 `

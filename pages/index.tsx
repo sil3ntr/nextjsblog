@@ -12,6 +12,7 @@ import { ThemeContext } from 'styled-components'
 import { Flex, FlexCol } from '../styles/Flex.Styled'
 import { HighlightStyled} from '../styles/Highlight.Style'
 import { Grid } from '../styles/GridStyled'
+import Footer from '../components/Footer'
 
 
 
@@ -37,76 +38,17 @@ export default function Home({linetteBlogs}: any) {
             <Header/>
             <main>
               <Grid>
-              <HighlightStyled>
-                  <img src='./images/linettedevigan_lrg.png' alt='Linette Devigan Logo'/> 
-                </HighlightStyled>
-                <HighlightStyled>
-                  <p>Some words in here.</p>
-                </HighlightStyled>
-                <HighlightStyled>
-                      <ul>
-                        {linetteBlogs.map( (blog: any, i: any) => <li key={i}><Link href={`/blogs/${blog.slug}`}>{blog.title}</Link></li>)}
-                      </ul>
-                </HighlightStyled>
+                <div>
+                  <p>Main Section</p>
+                </div>
+                <div>
+                    <p>Image Section</p>
+                </div>
               </Grid>
-              <Flex>
-              <FlexCol>
-                <HighlightStyled>
-                  <img src='./images/linettedevigan_lrg.png' alt='Linette Devigan Logo'/> 
-                </HighlightStyled>
-              </FlexCol>
-              <FlexCol>
-                <ContainerStyle>
-                  <div>
-                      <ul>
-                        {linetteBlogs.map( (blog: any, i: any) => <li key={i}><Link href={`/blogs/${blog.slug}`}>{blog.title}</Link></li>)}
-                      </ul>
-                  </div>
-                </ContainerStyle>
-              </FlexCol>
-              <FlexCol>
-              </FlexCol>
-              </Flex>
-              <Flex>
-                <FlexCol></FlexCol>
-                <FlexCol></FlexCol>
-                <FlexCol>  
-                  <HighlightStyled>
-                  <img src='./images/strategicmarketing.png' alt='Strategic Marketing'/> 
-                  </HighlightStyled>
-                </FlexCol>
-              </Flex>
             </main>
+            <Footer/>
         </>
       </ThemeProvider>
   )
 }
 
-export async function getStaticProps() {
-  const {data} = await client.query({
-    query: gql`
-        query {
-          linetteBlogs {
-            title 
-            author
-            slug
-            publishDate
-            blogText{
-              raw
-            }
-            heroImage {
-              url
-            }
-          }
-        }
-    `
-  });
-
-  const {linetteBlogs} = data;
-
-  return {
-    props: {
-      linetteBlogs
-    }
-  }
-}

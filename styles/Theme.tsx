@@ -2,9 +2,9 @@ import { ThemeProvider } from "styled-components";
 
 export const Darktheme = {
         colors:{
-            header: '#244335',
-            body: '#244335',
-            footer: '#003333',
+            header: '#52796F',
+            body: '#52796F',
+            footer: '#52796F',
             //font: '#DDAE7E'
             font: '#ECE4CA',
         }
