@@ -44,16 +44,48 @@ export const Logo = styled.div`
 `
 export const HeaderStyledBox = styled.div `
     box-sizing: border-box;
-
     position: absolute;
     width: 1298px;
     height: 62px;
     left: 72px;
     top: 10px;
 
-    border-width: 2px 2px 3px 2px;
-    border-style: solid;
+    //border-width: 2px 2px 3px 2px;
+    //border-style: solid;
     border-color: #01161E;
-    filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.25));
+    //filter: drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.25));
     border-radius: 10px;
+    overflow: hidden;
+
+    ::before {
+        content: '';
+        position:absolute;
+        width: 100%;
+        height: 100%;
+        border: 5px solid #01161E;
+        background: #000;
+        border-right: none;
+        border-bottom: none;
+        transition: height 0.5s linear,
+                    width 0.5s linear 0.5s;
+        //animation: rotate 4s linear 2;
+    }
+
+    ::after {
+        content: '';
+        position:absolute;
+        background: ${Darktheme.colors.header};
+        inset: 2px;
+        border-radius: 8px;
+    }
+
+   /*  @keyframes rotate {
+        from{
+            transform: rotate(0deg)
+        }
+        to{
+            transform: rotate(369deg)
+        }
+    } */
+
 `

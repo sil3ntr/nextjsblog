@@ -5,7 +5,7 @@ import { poppins } from './Global'
 export const FooterStyledBox = styled.div `
     box-sizing: border-box;
 
-    position: absolute;
+    position: relative;
     width: 1298px;
     height: 72px;
     left: 70px;
